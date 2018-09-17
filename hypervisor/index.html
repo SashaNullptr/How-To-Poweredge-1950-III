@@ -69,6 +69,18 @@
         
             <li><a class="toctree-l3" href="#motivation">Motivation</a></li>
         
+            <li><a class="toctree-l3" href="#installing-a-base-image">Installing a Base Image</a></li>
+        
+            <li><a class="toctree-l3" href="#setting-up-kvm">Setting up KVM</a></li>
+        
+            <li><a class="toctree-l3" href="#install-kvm-and-supporting-utilities">Install KVM and Supporting Utilities</a></li>
+        
+            <li><a class="toctree-l3" href="#install-virt-mananger">Install Virt-Mananger</a></li>
+        
+            <li><a class="toctree-l3" href="#set-up-network-bridge">Set up Network Bridge</a></li>
+        
+            <li><a class="toctree-l3" href="#set-up-pcie-pass-through">Set up PCIe Pass-through</a></li>
+        
         </ul>
     
 
@@ -113,6 +125,49 @@
 You could run one gigantic bare-metal single OS, but that would almost certainly be
 inflexible and insecure. A more flexible approach, that is still fairly close to metal,
 is to run a hypervisor, like <a href="https://www.xenproject.org/">Xen</a> or <a href="https://www.linux-kvm.org/page/Main_Page">KVM</a>.</p>
+<h2 id="installing-a-base-image">Installing a Base Image</h2>
+<p>We will be using Debian Linux as our base image, for entirely
+preferential reasons. The rest of the guide will only apply to Debian systems
+but should provide a good template for other systems as well.</p>
+<h2 id="setting-up-kvm">Setting up KVM</h2>
+<h2 id="install-kvm-and-supporting-utilities">Install KVM and Supporting Utilities</h2>
+<pre><code class="shell">sudo apt-get install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils
+</code></pre>
+
+<h2 id="install-virt-mananger">Install Virt-Mananger</h2>
+<p>While not strictly necessary <code>virt-manager</code> provides a GUI for provisioning and
+monitoring VMs.</p>
+<pre><code class="shell">sudo apt-get install virt-manager
+</code></pre>
+
+<h2 id="set-up-network-bridge">Set up Network Bridge</h2>
+<pre><code class="shell"># /etc/network/interfaces
+# interfaces(5) file used by ifup(8) and ifdown(8)
+auto lo br0
+iface lo inet loopback
+
+iface eth0 inet manual
+
+iface br0 inet dhcp
+    bridge_ports    eth0
+    bridge_stp      off
+    bridge_maxwait  0
+    bridge_fd       0
+</code></pre>
+
+<pre><code class="shell"># /etc/network/interfaces
+# interfaces(5) file used by ifup(8) and ifdown(8)
+auto lo br0
+iface lo inet loopback
+
+iface eth0 inet manual
+
+iface br0 inet dhcp
+   bridge_ports eth0
+
+</code></pre>
+
+<h2 id="set-up-pcie-pass-through">Set up PCIe Pass-through</h2>
               
             </div>
           </div>
