@@ -127,6 +127,17 @@ Power should either be supplied from the 12 volt sources available on the main b
 ( or the two power supplies ) or entirely from an external power supplies, as is the
 case when using a PCIe extender and external power supply.
 
+### Resetting the BIOS
+
+Any time the iDRAC card is removed from or added to the system the BIOS will need
+to be reset or the system will hang on POST. The order to reset the BIOS the
+`NVRAM_CLR` jumper will need to be set to the "clear" position and the system will
+need to be boot cycled.
+
+A page from the maintenance manual for setting the `NVRAM_CLR` jumper is shown below.
+
+![this page](static_assets/dell_poweredge_1950_bios_reset_pg.png)
+
 ### List of Graphics Cards Known to Work
 
 * PNY GeForce GT 720 1GB DDR3
