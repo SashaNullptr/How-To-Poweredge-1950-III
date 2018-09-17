@@ -77,7 +77,7 @@
         
             <li><a class="toctree-l3" href="#install-virt-mananger">Install Virt-Mananger</a></li>
         
-            <li><a class="toctree-l3" href="#set-up-network-bridge">Set up Network Bridge</a></li>
+            <li><a class="toctree-l3" href="#set-up-a-network-bridge">Set up a Network Bridge</a></li>
         
             <li><a class="toctree-l3" href="#set-up-pcie-pass-through">Set up PCIe Pass-through</a></li>
         
@@ -140,7 +140,24 @@ monitoring VMs.</p>
 <pre><code class="shell">sudo apt-get install virt-manager
 </code></pre>
 
-<h2 id="set-up-network-bridge">Set up Network Bridge</h2>
+<h2 id="set-up-a-network-bridge">Set up a Network Bridge</h2>
+<p>In order for any of our VMs to have network access we need to set up a network bridge
+to our host system. There are quite a few ways to do this, but one of the most
+straight-forward ways is to edit <code>/etc/network/interfaces</code> and set up a network bridge.
+Note that <code>eth0</code> in the example files is just the name of the Ethernet
+adapter. The Poweredge 1950 has <em>two</em> NICs built-in which are labeled <code>eth0</code> and
+<code>eth1</code>so we could have just as easily used <code>eth1</code>.</p>
+<p>Further note that Ethernet adapter names are <em>not</em> guaranteed to be consistent across OSes and hardware. If this guide is being adapted to other hardware of systems the name will
+need to be resolved and <code>eth0</code> will need to be replaced in the interface file.
+To list all network interface devices, simply use <code>ls /sys/class/net</code>.</p>
+<h3 id="public-virtual-bridge">Public Virtual Bridge</h3>
+<p>In general not only want our VMs to be able to access network resources, but we
+also want to be able to access them without needing to go through the host machine.
+In order to do this we need a public bridge, which will expose any guest VMs on
+as machines on the same network as the host.</p>
+<p>Below is an example interfaces that will set-up a public bridge. Whenever we
+modify the <code>/etc/network/interfaces</code> file we will need to reboot the host machine
+or run <code>/etc/init.d/networking restart</code>.</p>
 <pre><code class="shell"># /etc/network/interfaces
 # interfaces(5) file used by ifup(8) and ifdown(8)
 auto lo br0
@@ -153,18 +170,6 @@ iface br0 inet dhcp
     bridge_stp      off
     bridge_maxwait  0
     bridge_fd       0
-</code></pre>
-
-<pre><code class="shell"># /etc/network/interfaces
-# interfaces(5) file used by ifup(8) and ifdown(8)
-auto lo br0
-iface lo inet loopback
-
-iface eth0 inet manual
-
-iface br0 inet dhcp
-   bridge_ports eth0
-
 </code></pre>
 
 <h2 id="set-up-pcie-pass-through">Set up PCIe Pass-through</h2>
