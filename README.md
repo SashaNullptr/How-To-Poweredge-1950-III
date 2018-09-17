@@ -22,7 +22,7 @@ a decent option.
 
 ## The Draw Backs
 
-For reasons we will discuss in the [hardware section](hardware.md) these machines
+For reasons we will discuss in the [docs/hardware section](hardware.md) these machines
 are LOUD. As in, non-trivial risk of hearing damage loud. If you live in a small
 space there is no way to adequately mask the sound, and if you live in a large
 space you need to make peace with a room that will be borderline inhospitable.
