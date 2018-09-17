@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="None">
+  
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>How To: Dell Poweredge 1950 Gen. III - How To Poweredge 1950 III</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "How To: Dell Poweredge 1950 Gen. III";
+    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> How To Poweredge 1950 III</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href=".">How To: Dell Poweredge 1950 Gen. III</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#how-to-dell-poweredge-1950-gen-iii">How To: Dell Poweredge 1950 Gen. III</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#what-is-the-project">What is the Project?</a></li>
+        
+            <li><a class="toctree-l3" href="#but-why">But Why?</a></li>
+        
+            <li><a class="toctree-l3" href="#the-draw-backs">The Draw Backs</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="hardware/">Hardware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="hypervisor/">Hosting a Hypervisor</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">How To Poweredge 1950 III</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>How To: Dell Poweredge 1950 Gen. III</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="how-to-dell-poweredge-1950-gen-iii">How To: Dell Poweredge 1950 Gen. III</h1>
+<h2 id="what-is-the-project">What is the Project?</h2>
+<p>Suppose, in a strictly hypothetical scenario, you purchased a Generation III Dell Poweredge
+from your local PC recycler ( who may have given you a 40% discount ). Now you have
+a 1U rack server, made in 2009, and you're wondering what to do with it.</p>
+<p>This is a totally opinionated guide to getting the absolute most of a Gen. III Poweredge.</p>
+<h2 id="but-why">But Why?</h2>
+<p>Since hardware of this vintage has long since been phased out of data-centers,
+parts are <em>cheap</em>. While it will never compete with modern hardware
+on a watts / dollar basis, when fully spec'd out these systems are roughly equivalent to
+an <code>c5d.4xlarge</code> AWS EC2 instance, which would run about \$550 per month. If you add
+a decent GPU into the mix you can end up with something closer to a <code>p3.2xlarge</code>
+instance, which would set you back \$2200 / month. If we assume power is about
+$0.15 per kilowatt hour, we are looking at a monthly power bill in the \$30-50 dollar range.
+This means if you need a big compute / build node Poweredge 1950's actually make
+a decent option.</p>
+<h2 id="the-draw-backs">The Draw Backs</h2>
+<p>For reasons we will discuss in the <a href="hardware/">hardware section</a> these machines
+are LOUD. As in, non-trivial risk of hearing damage loud. If you live in a small
+space there is no way to adequately mask the sound, and if you live in a large
+space you need to make peace with a room that will be borderline inhospitable.
+However, if you plan on colo'ing your system this will not make much of a difference.</p>
+<p>These machines are also <em>not</em> particularly flexible when it comes to hardware. They
+were never designed for high power PCIe devices, and those will only accept graphics
+cards under duress. Modern servers that include auxillary 12 volt plugs and have
+2U sized PCIe risers take to graphics cards and unusual PCIe hardware much, much
+more easily.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="hardware/" class="btn btn-neutral float-right" title="Hardware">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+        <span style="margin-left: 15px"><a href="hardware/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.0.4
+Build Date UTC : 2018-09-17 01:47:52
+-->
