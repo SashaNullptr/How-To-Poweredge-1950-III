@@ -16,7 +16,7 @@ and pay by the amp-hour, or have an amperage limit.
 
 ## RAM
 
-Up to 64 GB of DDR2 Ram, as 8 x 8 GB sticks, is supported. Any brand of memory
+Up to 64 GB of DDR2 FB-DIMM ( Fully Buffered ) Ram, as 8 x 8 GB sticks, is supported. Any brand of memory
 should suffice, but [A-Tech](https://www.amazon.com/gp/product/B00J8QK43A/)
 produces some of the cheapest 64 GB RAM bundles.
 
