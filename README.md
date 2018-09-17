@@ -33,3 +33,7 @@ were never designed for high power PCIe devices, and those will only accept grap
 cards under duress. Modern servers that include auxillary 12 volt plugs and have
 2U sized PCIe risers take to graphics cards and unusual PCIe hardware much, much
 more easily.
+
+## Where is the Rest of the Project?
+
+This guide is (mostly) a static site, hosted [over here.](https://SashaNullptr.github.io/How-To-Poweredge-1950-III/)
