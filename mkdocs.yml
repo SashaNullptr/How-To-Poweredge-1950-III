@@ -5,3 +5,10 @@ nav:
     - Home: 'index.md'
     - Hardware: 'hardware/index.md'
     - VM Usage: 'vm_usage/index.md'
+
+social:
+  - type: 'github'
+  - link: 'https://github.com/SashaNullptr'
+
+repo_name: How-To-Poweredge-1950-III
+repo_url: https://github.com/SashaNullptr/How-To-Poweredge-1950-III
