@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <link rel="shortcut icon" href="../img/favicon.ico">
 
-    <title>Hardware - How To Poweredge 1950 III</title>
+    <title>Overview - How To Poweredge 1950 III</title>
 
     <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -36,7 +36,7 @@
     
 </head>
 
-<body class="homepage" >
+<body>
 
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
@@ -69,8 +69,23 @@
                 
                 
                 
-                    <li class="active">
-                        <a href="./">Hardware</a>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hardware <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li class="active">
+    <a href="./">Overview</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="gpu/">GPU Usage</a>
+</li>
+
+                        
+                        </ul>
                     </li>
                 
                 
@@ -94,12 +109,12 @@
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../vm_usage/">
+                        <a rel="prev" href="gpu/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="https://github.com/SashaNullptr/How-To-Poweredge-1950-III/edit/master/docs/hardware/index.md">Edit on How-To-Poweredge-1950-III</a>
+                        <a href="https://github.com/SashaNullptr/How-To-Poweredge-1950-III/edit/master/docs/hardware/index.md"><i class="fa fa-github"></i> Edit on GitHub</a>
                     </li>
             </ul>
         </div>
@@ -110,7 +125,7 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="first-level active"><a href="#hardware">Hardware</a></li>
+        <li class="first-level active"><a href="#overview-of-hardware">Overview of Hardware</a></li>
             <li class="second-level"><a href="#processor">Processor</a></li>
                 
                 <li class="third-level"><a href="#caveats">Caveats</a></li>
@@ -127,7 +142,7 @@
 </div></div>
         <div class="col-md-9" role="main">
 
-<h1 id="hardware">Hardware</h1>
+<h1 id="overview-of-hardware">Overview of Hardware</h1>
 <h2 id="processor">Processor</h2>
 <p>The Poweredge 1950 comes equipped with 2 LGA771 processor slots.</p>
 <p>The best processor for this socket, based on PassMark score, seems to be the Intel Xeon X5450.
@@ -237,8 +252,3 @@ drive enclosure and power supply is used 4 HDDs can be provisioned by the RAID c
     </body>
 
 </html>
-
-<!--
-MkDocs version : 1.0.4
-Build Date UTC : 2018-09-26 14:00:14
--->

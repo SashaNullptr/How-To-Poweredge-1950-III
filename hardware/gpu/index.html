@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <link rel="shortcut icon" href="../../img/favicon.ico">
 
-    <title>Using Graphics Cards - How To Poweredge 1950 III</title>
+    <title>GPU Usage - How To Poweredge 1950 III</title>
 
     <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -69,8 +69,23 @@
                 
                 
                 
-                    <li >
-                        <a href="../">Hardware</a>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hardware <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../">Overview</a>
+</li>
+
+                        
+                            
+<li class="active">
+    <a href="./">GPU Usage</a>
+</li>
+
+                        
+                        </ul>
                     </li>
                 
                 
@@ -88,8 +103,18 @@
                             <i class="fa fa-search"></i> Search
                         </a>
                     </li>
+                    <li >
+                        <a rel="next" href="../">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../../vm_usage/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
                     <li>
-                        <a href="https://github.com/SashaNullptr/How-To-Poweredge-1950-III/edit/master/docs/hardware/gpu.md">Edit on How-To-Poweredge-1950-III</a>
+                        <a href="https://github.com/SashaNullptr/How-To-Poweredge-1950-III/edit/master/docs/hardware/gpu.md"><i class="fa fa-github"></i> Edit on GitHub</a>
                     </li>
             </ul>
         </div>
@@ -111,6 +136,8 @@
                 
             <li class="second-level"><a href="#using-graphics-cards-that-require-25-watts_1">Using Graphics Cards that Require &gt; 25 Watts</a></li>
                 
+                <li class="third-level"><a href="#using-an-external-power-supply">Using an External Power Supply</a></li>
+                <li class="third-level"><a href="#using-an-internal-power-supply">Using an Internal Power Supply</a></li>
             <li class="second-level"><a href="#resetting-the-bios">Resetting the BIOS</a></li>
                 
             <li class="second-level"><a href="#list-of-graphics-cards-known-to-work">List of Graphics Cards Known to Work</a></li>
@@ -125,29 +152,29 @@
 <p>The Poweredge 1950 was produced in an era before GPGPU computing was in vogue
 and was not built with high-power use PCIe devices in mind. However, with enough
 work GPUs <em>can</em> be used</p>
-<h3 id="pcie-slots-available">PCIe Slots Available</h3>
+<h2 id="pcie-slots-available">PCIe Slots Available</h2>
 <p>The Poweredge 1950 can be equipped with either two PCI-X risers, or two PCIe 2.0
 8x risers. Note that these <em>cannot</em> be mixed and matched, it must be either two
 PCI-X risers, or two PCIe risers.</p>
 <p>Since there are a very limited number of PCI-X graphics cards available, none of
 which are any good, for GPU use the two PCIe risers will are almost always used.</p>
-<h3 id="caveats">Caveats</h3>
+<h2 id="caveats">Caveats</h2>
 <p>The PCIe 2.0 standard dictates that PCIe slots should provide 25 watts of power to
 standard devices and up to 75 watts to devices identified as "high power" such as
 graphics cards. However, it seems that the 8x PCIe slots do <em>not</em> comply with
 this part of the standard and will only supply up to 25 watts to any device.</p>
-<h3 id="using-a-graphics-card-as-a-vga-device">Using a Graphics Card as a VGA Device</h3>
+<h2 id="using-a-graphics-card-as-a-vga-device">Using a Graphics Card as a VGA Device</h2>
 <p>In order to use graphics cards as VGA devices, which
 is required for graphics output and OpenCL/CUDA device use, the iDRAC
 remote management card will need to be removed. In general the system will boot
 just fine with the iDRAC in place, but any attached graphics cards will not show
 up as valid VGA devices on boot. By removing the iDRAC and resetting the BIOS
 graphics cards can be used as VGA devices, as per usual.</p>
-<h3 id="using-graphics-cards-that-require-25-watts">Using Graphics Cards that Require &lt;= 25 Watts</h3>
+<h2 id="using-graphics-cards-that-require-25-watts">Using Graphics Cards that Require &lt;= 25 Watts</h2>
 <p>Graphics cards that draw less than 25 watts will, generally not run afoul
 of power draw issues. However not every card will be recognized by the BIOS, and
 there doesn't appear to be any way to tell <em>a prior</em> which cards will work.</p>
-<h3 id="using-graphics-cards-that-require-25-watts_1">Using Graphics Cards that Require &gt; 25 Watts</h3>
+<h2 id="using-graphics-cards-that-require-25-watts_1">Using Graphics Cards that Require &gt; 25 Watts</h2>
 <p>Any card that is rated at &gt; 75 watt power usage will generally cause a POST failure
 with an PCIe riser error, assuming only power from the PCIe slot is used. However,
 if 12 volt power is supplied from an external source the card will usually work
@@ -157,19 +184,21 @@ and auxiliary power from an external power supply is <em>not recommended</em>.
 Power should either be supplied from the 12 volt sources available on the main board
 ( or the two power supplies ) or entirely from an external power supplies, as is the
 case when using a PCIe extender and external power supply.</p>
-<h3 id="resetting-the-bios">Resetting the BIOS</h3>
+<h3 id="using-an-external-power-supply">Using an External Power Supply</h3>
+<h3 id="using-an-internal-power-supply">Using an Internal Power Supply</h3>
+<h2 id="resetting-the-bios">Resetting the BIOS</h2>
 <p>Any time the iDRAC card is removed from or added to the system the BIOS will need
 to be reset or the system will hang on POST. The order to reset the BIOS the
 <code>NVRAM_CLR</code> jumper will need to be set to the "clear" position and the system will
 need to be boot cycled.</p>
 <p>A page from the maintenance manual for setting the <code>NVRAM_CLR</code> jumper is shown below.</p>
 <p><img alt="this page" src="../dell_poweredge_1950_bios_reset_pg.png" /></p>
-<h3 id="list-of-graphics-cards-known-to-work">List of Graphics Cards Known to Work</h3>
+<h2 id="list-of-graphics-cards-known-to-work">List of Graphics Cards Known to Work</h2>
 <ul>
 <li>PNY GeForce GT 720 1GB DDR3</li>
 <li>Sapphire Nitro Radeon R7 360</li>
 </ul>
-<h3 id="list-of-graphics-cards-known-not-to-work">List of Graphics Cards Known NOT to Work</h3>
+<h2 id="list-of-graphics-cards-known-not-to-work">List of Graphics Cards Known NOT to Work</h2>
 <ul>
 <li>Nvidia GeForce GTX 750 Ti</li>
 </ul></div>
