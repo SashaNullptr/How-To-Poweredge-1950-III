@@ -145,4 +145,4 @@ A page from the maintenance manual for setting the `NVRAM_CLR` jumper is shown b
 
 ### List of Graphics Cards Known NOT to Work
 
-* Nvidia GT 1050(?)
+* Nvidia GeForce GTX 750 Ti
