@@ -1,4 +1,4 @@
-# Hardware
+# Overview of Hardware
 
 ## Processor
 

@@ -3,12 +3,14 @@ theme: cinder
 
 nav:
     - Home: 'index.md'
-    - Hardware: 'hardware/index.md'
+    - Hardware:
+        - 'Overview': 'hardware/index.md'
+        - 'GPU Usage': 'hardware/gpu.md'
     - VM Usage: 'vm_usage/index.md'
 
 social:
   - type: 'github'
   - link: 'https://github.com/SashaNullptr'
 
-repo_name: How-To-Poweredge-1950-III
+repo_name: GitHub
 repo_url: https://github.com/SashaNullptr/How-To-Poweredge-1950-III
