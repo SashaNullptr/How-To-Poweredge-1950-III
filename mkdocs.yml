@@ -6,7 +6,6 @@ nav:
     - Hardware:
         - 'Overview': 'hardware/index.md'
         - 'GPU Usage': 'hardware/gpu.md'
-    - VM Usage: 'vm_usage/index.md'
 
 social:
   - type: 'github'
