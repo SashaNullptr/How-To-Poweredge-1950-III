@@ -6,6 +6,7 @@ nav:
     - Hardware:
         - 'Overview': 'hardware/index.md'
         - 'GPU Usage': 'hardware/gpu.md'
+    - Provisioning: 'provisioning/index.md'
 
 social:
   - type: 'github'
