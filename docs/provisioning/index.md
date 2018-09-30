@@ -36,8 +36,16 @@ long-term storage or for applications where I/O performance is not critical.
 
 ### Setting up RAID Arrays
 
+To set-up RAID arrays we will have to go through the PERC 6/i RAID configuration utility.
+To access this firmware we will need to reboot the server and press
+`Ctrl + R` when prompted during the boot-up sequence.
 
-### Setting up Extra SATA HDD
+### Setting up The SATA 1.0 HDD
+
+In order to use the extra HDD we will have to enable the internal SATA port and set
+it to read hard drives via the system BIOS.
+
+In order to access the BIOS we need to press `F2` during the initial start-up screen.
 
 ### Firmware
 
@@ -124,5 +132,5 @@ manually during installation, or after installation using `gparted` or similar.
 ## Mounting HDDs
 
 By default only the small 120 GB partition that holds the OS will be mounted on
-boot. We need to set up mount points for our 2.6 TB RAID 5 array and the
-independent 2 TB HDD.
+boot. We need to set up mount points for our 2.6 TB RAID 5 array and 2 TB HDD
+and configure the system to mount both drives during boot.

@@ -10,7 +10,7 @@ This is a quad-core, none hyperthreaded processor that runs at 3.30 GHz.
 ### Caveats
 
 X5450's use **a lot** of power, with a TDP of 120 Watts each! A machine
-equipped with two X5450's, 64 GB of RAM and 4 2.5" HDDs will draw over 300 Watts
+equipped with two X5470's, 64 GB of RAM and 4 2.5" HDDs will draw over 300 Watts
 **at idle**. This can be a particular concern if you plan on colo'ing a unit
 and pay by the amp-hour, or have an amperage limit.
 
