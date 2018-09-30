@@ -131,7 +131,7 @@
             <li class="second-level"><a href="#disk-partitioning-scheme">Disk Partitioning Scheme</a></li>
                 
                 <li class="third-level"><a href="#setting-up-raid-arrays">Setting up RAID Arrays</a></li>
-                <li class="third-level"><a href="#setting-up-extra-sata-hdd">Setting up Extra SATA HDD</a></li>
+                <li class="third-level"><a href="#setting-up-the-sata-10-hdd">Setting up The SATA 1.0 HDD</a></li>
                 <li class="third-level"><a href="#firmware">Firmware</a></li>
                 <li class="third-level"><a href="#installation-details">Installation Details</a></li>
             <li class="second-level"><a href="#mounting-hdds">Mounting HDDs</a></li>
@@ -191,7 +191,13 @@ volume. This means that we will have access to almost the full storage available
 the disk, but lower I/O speeds. Because of this we reserve the 2 TB volume for
 long-term storage or for applications where I/O performance is not critical.</p>
 <h3 id="setting-up-raid-arrays">Setting up RAID Arrays</h3>
-<h3 id="setting-up-extra-sata-hdd">Setting up Extra SATA HDD</h3>
+<p>To set-up RAID arrays we will have to go through the PERC 6/i RAID configuration utility.
+To access this firmware we will need to reboot the server and press
+<code>Ctrl + R</code> when prompted during the boot-up sequence.</p>
+<h3 id="setting-up-the-sata-10-hdd">Setting up The SATA 1.0 HDD</h3>
+<p>In order to use the extra HDD we will have to enable the internal SATA port and set
+it to read hard drives via the system BIOS.</p>
+<p>In order to access the BIOS we need to press <code>F2</code> during the initial start-up screen.</p>
 <h3 id="firmware">Firmware</h3>
 <p>The Ethernet adapters used by the Poweredge 1950 require firmware from the
 <code>firmware-bnx2_0.43</code> package in order to operate. This firmware can be installed during initial
@@ -255,8 +261,8 @@ this is a truly excessive amount of <code>swap</code> space. We can either parti
 manually during installation, or after installation using <code>gparted</code> or similar.</p>
 <h2 id="mounting-hdds">Mounting HDDs</h2>
 <p>By default only the small 120 GB partition that holds the OS will be mounted on
-boot. We need to set up mount points for our 2.6 TB RAID 5 array and the
-independent 2 TB HDD.</p></div>
+boot. We need to set up mount points for our 2.6 TB RAID 5 array and 2 TB HDD
+and configure the system to mount both drives during boot.</p></div>
         
     </div>
 
@@ -310,5 +316,5 @@ independent 2 TB HDD.</p></div>
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2018-09-30 20:27:17
+Build Date UTC : 2018-09-30 21:53:27
 -->
