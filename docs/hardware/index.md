@@ -4,8 +4,8 @@
 
 The Poweredge 1950 comes equipped with 2 LGA771 processor slots.
 
-The best processor for this socket, based on PassMark score, seems to be the Intel Xeon X5450.
-This is a quad-core, none hyperthreaded processor that runs at 3.00 GHz.
+The best processor for this socket, based on PassMark score, seems to be the Intel Xeon X5470.
+This is a quad-core, none hyperthreaded processor that runs at 3.30 GHz.
 
 ### Caveats
 
